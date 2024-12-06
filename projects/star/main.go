@@ -4,13 +4,13 @@ import "fmt"
 
 func main() {
 	var str string
-	var newstr string
 	fmt.Scan(&str)
-	for i := 0; i < len(str); i++ {
-		newstr += string(str[i])
-		if i != len(str)-1 {
-			newstr += "*"
+	for index, digit := range str {
+		if index == 0 || index == len(str) {
+			fmt.Print(string(digit))
+		} else {
+			fmt.Print("*")
+			fmt.Print(string(digit))
 		}
 	}
-	fmt.Println(newstr)
 }
